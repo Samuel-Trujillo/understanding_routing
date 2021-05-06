@@ -9,8 +9,8 @@ def dojo():
 @app.route('/say/<ninput>')
 def say(ninput):
     return "Hi " + str(ninput) +"!"
-@app.route('/repeat/<times>/<text>')
+@app.route('/repeat/<int:times>/<text>')
 def repeat(times,text):
-    return str((text + "  ") * int(times))
+    return str(text + "  ") * times
 if __name__=="__main__":
     app.run(debug=True)    
